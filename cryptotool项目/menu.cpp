@@ -36,7 +36,6 @@ void Menu::showmenu(){
 void  Menu::encryptotxt(){
     cout<<"请输入你要加密的文本"<<endl;
     string beforetxt;
-    cin.ignore();
     getline(cin, beforetxt);
     cout<<"请输入密钥"<<endl;
     int key;
@@ -47,7 +46,6 @@ void  Menu::encryptotxt(){
 void Menu::decryptotxt(){
     cout<<"请输入你要解密的文本"<<endl;
     string beforetxt;
-   cin.ignore();
     getline(cin, beforetxt);
     cout<<"请输入密钥"<<endl;
    int key;
@@ -64,7 +62,6 @@ void Menu::encryptofile(){
     cout<<"请输入密钥"<<endl;
     int key;
     cin>>key;
-    cin.ignore();
     string content=FileHandler::readfile(beforepath);
     string aftercontent=Crypto::encrypto (content,key);
     afterpath="encrypted.txt";
@@ -82,7 +79,6 @@ void Menu::decryptofile(){
     cout<<"请输入密钥"<<endl;
     int key;
     cin>>key;
-    cin.ignore();
     string content=FileHandler::readfile(beforepath);
     string aftercontent=Crypto::decrypto (content,key);
     afterpath="decrypted.txt";
